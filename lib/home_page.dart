@@ -3,6 +3,7 @@ import 'package:flutter_demo/awesome_page.dart';
 import 'package:flutter_demo/detail_page.dart';
 import 'package:flutter_demo/single_controller.dart';
 import 'package:flutter_demo/single_page.dart';
+import 'package:flutter_demo/stream_test_page.dart';
 import 'package:get/get.dart';
 
 import 'data_controller.dart';
@@ -42,6 +43,12 @@ class HomePage extends StatelessWidget {
                   binding: BindingsBuilder.put(() => SingleController()),
                   preventDuplicates: false,
                 );
+              },
+            ),
+            ElevatedButton(
+              child: Text("stream"),
+              onPressed: () {
+                Get.to(StreamTestPage());
               },
             ),
             ObxValue((RxBool data) => Switch(
