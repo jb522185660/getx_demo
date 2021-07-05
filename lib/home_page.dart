@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/animation_page.dart';
 import 'package:flutter_demo/awesome_page.dart';
+import 'package:flutter_demo/bus_page.dart';
 import 'package:flutter_demo/detail_page.dart';
 import 'package:flutter_demo/keyboard_test_page.dart';
 import 'package:flutter_demo/single_controller.dart';
@@ -77,6 +78,12 @@ class HomePage extends StatelessWidget {
               child: Text("voice play"),
               onPressed: () {
                 Get.to(VoicePlayPage());
+              },
+            ),
+            ElevatedButton(
+              child: Text("bus"),
+              onPressed: () {
+                Get.to(BusPage());
               },
             ),
             ObxValue((RxBool data) => Switch(
