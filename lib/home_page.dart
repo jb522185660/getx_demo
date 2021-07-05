@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/animation_page.dart';
 import 'package:flutter_demo/awesome_page.dart';
 import 'package:flutter_demo/detail_page.dart';
+import 'package:flutter_demo/keyboard_test_page.dart';
 import 'package:flutter_demo/single_controller.dart';
 import 'package:flutter_demo/single_page.dart';
+import 'package:flutter_demo/sound_recored_page.dart';
 import 'package:flutter_demo/stream_test_page.dart';
+import 'package:flutter_demo/voice_play_page.dart';
 import 'package:get/get.dart';
 
 import 'data_controller.dart';
@@ -49,6 +53,30 @@ class HomePage extends StatelessWidget {
               child: Text("stream"),
               onPressed: () {
                 Get.to(StreamTestPage());
+              },
+            ),
+            ElevatedButton(
+              child: Text("animation"),
+              onPressed: () {
+                Get.to(AnimationPage());
+              },
+            ),
+            ElevatedButton(
+              child: Text("keyboard"),
+              onPressed: () {
+                Get.to(KeyboardTestPage());
+              },
+            ),
+            ElevatedButton(
+              child: Text("sound record"),
+              onPressed: () {
+                Get.to(SoundRecordPage());
+              },
+            ),
+            ElevatedButton(
+              child: Text("voice play"),
+              onPressed: () {
+                Get.to(VoicePlayPage());
               },
             ),
             ObxValue((RxBool data) => Switch(
