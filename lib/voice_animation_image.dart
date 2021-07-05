@@ -7,7 +7,6 @@ class VoiceAnimationImage extends StatefulWidget {
   final double? height;
   int? interval = 200;
   bool? isStop= false;
-  var callStart;
   late VoiceAnimationImageState voiceAnimationImageState;
 
 
@@ -58,7 +57,7 @@ class VoiceAnimationImageState extends State<VoiceAnimationImage>
       }
     });
 
-    _animation = new Tween<double>(begin: 0, end: imageCount.toDouble())
+    _animation = Tween<double>(begin: 0, end: imageCount.toDouble())
         .animate(_controller)
       ..addListener(() {
         setState(() {
@@ -83,7 +82,7 @@ class VoiceAnimationImageState extends State<VoiceAnimationImage>
   @override
   Widget build(BuildContext context) {
 
-    if(widget.isStop!){
+    if(widget.isStop == false){
       start();
     }else{
       stop();
@@ -105,6 +104,20 @@ class VoiceAnimationImageState extends State<VoiceAnimationImage>
       width: widget.width,
       height: widget.height,
     ));
-    return  Stack(alignment: AlignmentDirectional.center, children: images);
+    if (widget.isStop == true) {
+      images = [
+        Image.asset(
+          widget._assetList[widget._assetList.length-1],
+          width: widget.width,
+          height: widget.height,
+        )
+      ];
+    }
+    return Container(
+      width: widget.width,
+      height: widget.height,
+      alignment: Alignment.center,
+      child: Stack(alignment: AlignmentDirectional.center, children: images),
+    );
   }
 }

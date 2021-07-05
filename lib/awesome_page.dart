@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'data_controller.dart';
+import 'method/common_method.dart';
 
 class AwesomePage extends GetView<DataController> {
   const AwesomePage({Key? key}) : super(key: key);
@@ -18,10 +19,21 @@ class AwesomePage extends GetView<DataController> {
           children: [
             Text(
               "用户信息:${controller.user.value.toString()}"
-            )
+            ),
+            ElevatedButton(
+              child: Text("操作泛型方法"),
+              onPressed: () {
+                testMethod();
+              },
+            ),
           ],
         ),
       ),
     );
+  }
+
+  void testMethod() {
+    var result = second(['one','two']);
+    print(result);
   }
 }

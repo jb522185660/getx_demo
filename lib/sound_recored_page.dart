@@ -20,7 +20,7 @@ class _SoundRecordPageState extends State<SoundRecordPage> {
     _recordPlugin.init();
 
     ///初始化方法的监听
-    _recordPlugin?.responseFromInit.listen((data) {
+    _recordPlugin.responseFromInit.listen((data) {
       if (data) {
         print("初始化成功");
       } else {
